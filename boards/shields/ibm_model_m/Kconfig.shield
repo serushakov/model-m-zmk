@@ -1,2 +1,0 @@
-config SHIELD_IBM_MODEL_M
-    def_bool $(shields_list_contains,ibm_model_m)
