@@ -1,0 +1,6 @@
+if SHIELD_IBM_MODEL_M
+
+config ZMK_KEYBOARD_NAME
+    default "ibm-model-m"
+
+endif # SHIELD_IBM_MODEL_M
