@@ -1,0 +1,23 @@
+&flash0 {
+
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		sd_partition: partition@0 {
+			label = "softdevice";
+			reg = <0x00000000 0x00026000>;
+		};
+		slot0_partition: partition@26000 {
+			label = "image-0";
+			reg = <0x00026000 0x00067000>;
+		};
+
+		/* Storage partition will be used by FCB/NFFS/NVS if enabled. */
+		storage_partition: partition@e5000 {
+			label = "storage";
+			reg = <0x000e5000 0x00008000>;
+		};
+	};
+};
