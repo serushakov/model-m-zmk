@@ -18,5 +18,5 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: nrf52_adafruit_feather
     shield: modelm
