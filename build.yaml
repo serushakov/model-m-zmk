@@ -18,5 +18,5 @@
 #
 ---
 include:
-  - board: nrf52_adafruit_feather
+  - board: adafruit_feather_nrf52840
     shield: modelm
