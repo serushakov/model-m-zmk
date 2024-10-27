@@ -18,5 +18,5 @@
 #
 ---
 include:
-  - board: adafruit_feather_nrf52840
+  - board: seeeduino_xiao_ble
     shield: modelm
