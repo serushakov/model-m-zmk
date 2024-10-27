@@ -11,5 +11,5 @@
                 &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N3
             >;
         };
-    }
+    };
  };
