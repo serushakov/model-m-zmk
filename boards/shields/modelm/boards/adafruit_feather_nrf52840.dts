@@ -133,7 +133,7 @@ zephyr_udc0: &usbd {
 
 / {
 	model = "Adafruit Feather nRF52840 Express";
-	compatible = "adafruit,feather-nrf52840-uf2";
+	compatible = "adafruit,feather-nrf52840";
 
 	chosen {
 		zephyr,console = &cdc_acm_uart0;
