@@ -1,7 +1,0 @@
-#include <nordic/nrf52840_partition_uf2_sdv6.dtsi>
-
-zephyr_udc0: &usbd {
-	cdc_acm_uart0: cdc_acm_uart0 {
-		compatible = "zephyr,cdc-acm-uart";
-	};
-};
