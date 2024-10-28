@@ -45,32 +45,32 @@
 		diode-direction = "row2col";
 		
 		col-gpios =
-		<&ext0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-		<&ext0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+		<&ext0 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 3  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 9  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		
 		row-gpios =
-		<&gpio1 9  GPIO_ACTIVE_HIGH>,
-		<&gpio0 8  GPIO_ACTIVE_HIGH>,
-		<&gpio0 6  GPIO_ACTIVE_HIGH>,
-		<&gpio0 27 GPIO_ACTIVE_HIGH>,
-		<&gpio0 26 GPIO_ACTIVE_HIGH>,
-		<&gpio0 7  GPIO_ACTIVE_HIGH>,
-		<&gpio1 8  GPIO_ACTIVE_HIGH>,
-		<&gpio0 10 GPIO_ACTIVE_HIGH>;
+		<&gpio1 9  (GPIO_ACTIVE_LOW)>,
+		<&gpio0 8  (GPIO_ACTIVE_LOW)>,
+		<&gpio0 6  (GPIO_ACTIVE_LOW)>,
+		<&gpio0 27 (GPIO_ACTIVE_LOW)>,
+		<&gpio0 26 (GPIO_ACTIVE_LOW)>,
+		<&gpio0 7  (GPIO_ACTIVE_LOW)>,
+		<&gpio1 8  (GPIO_ACTIVE_LOW)>,
+		<&gpio0 10 (GPIO_ACTIVE_LOW)>;
 	};
 	
 	default_transform: matrix_transform {
@@ -99,11 +99,6 @@
 
 &i2c0 {
 	status = "okay";
-	compatible = "nordic,nrf-twi";
-	status = "okay";
-	pinctrl-0 = <&i2c0_default>;
-	pinctrl-1 = <&i2c0_sleep>;
-	pinctrl-names = "default", "sleep";
 	clock-frequency = <I2C_BITRATE_FAST>;
 	
 	ext0: mcp23017@20 {
