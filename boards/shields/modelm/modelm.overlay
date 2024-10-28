@@ -64,15 +64,5 @@
         reg = <0x20>;
         #gpio-cells = <2>;
         ngpios = <16>;
-        int-gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
-    };
-    ext1: mcp23017@21 {
-        compatible = "microchip,mcp230xx";
-        status = "okay";
-        gpio-controller;
-        reg = <0x21>;
-        #gpio-cells = <2>;
-        ngpios = <16>;
-        int-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
     };
 };
