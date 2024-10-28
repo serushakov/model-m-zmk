@@ -20,7 +20,6 @@
 
 /delete-node/ &storage_partition;
 /delete-node/ &boot_partition;
-/delete-node/ &code_partition;
 
 &flash0 {
 	/*
