@@ -1,8 +1,8 @@
 / {
     chosen {
 			zmk,kscan = &kscan1;
-			zephyr,code-partition = &code_partition;
-			zephyr,flash = &flash1;
+			zephyr,code-partition = &code_partition_actual;
+			zephyr,flash = &flash0;
     };
 
      kscan1: kscan {
@@ -18,7 +18,7 @@
     };
 	};
 
-&flash1 {
+&flash0 {
 	/*
 	 * Default flash layout for nrf52840 using UF2 and SoftDevice s140 v6
 	 *
@@ -40,7 +40,7 @@
 			read-only;
 			reg = <0x00000000 0x00026000>;
 		};
-		code_partition: partition@26000 {
+		code_partition_actual: partition@26000 {
 			label = "Application";
 			reg = <0x00026000 0x000C6000>;
 		};
