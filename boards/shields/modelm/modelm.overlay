@@ -6,32 +6,49 @@
         zmk,matrix-transform = &default_transform;
     };
 
-    kscan1: kscan_matrix {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "row2col";
-        col-gpios
-            = <&ext0 0 GPIO_ACTIVE_LOW>
-            , <&ext0 1 GPIO_ACTIVE_LOW>
-            , <&ext0 2 GPIO_ACTIVE_LOW>
-            ;
-        row-gpios
-            = <&ext1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&ext1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&ext1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            ;
-    };
+    kscan1: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "kscan1";
 
-    default_transform: matrix_transform {
-        compatible = "zmk,matrix-transform";
-        rows = <3>;
-        columns = <3>;
+        input-gpios =
+            <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            <&gpio0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            <&gpio0 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		;
+    }
 
-        map = <
-            RC(0,0) RC(0,1) RC(0,2)
-            RC(1,0) RC(1,1) RC(1,2)
-            RC(2,0) RC(2,1) RC(2,2)
-        >;
-    };
+    // kscan1: kscan_matrix {
+    //     compatible = "zmk,kscan-gpio-matrix";
+    //     diode-direction = "row2col";
+    //     col-gpios
+    //         = <&ext0 0 GPIO_ACTIVE_LOW>
+    //         , <&ext0 1 GPIO_ACTIVE_LOW>
+    //         , <&ext0 2 GPIO_ACTIVE_LOW>
+    //         ;
+    //     row-gpios
+    //         = <&ext1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    //         , <&ext1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    //         , <&ext1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    //         ;
+    // };
+
+    // default_transform: matrix_transform {
+    //     compatible = "zmk,matrix-transform";
+    //     rows = <3>;
+    //     columns = <3>;
+
+    //     map = <
+    //         RC(0,0) RC(0,1) RC(0,2)
+    //         RC(1,0) RC(1,1) RC(1,2)
+    //         RC(2,0) RC(2,1) RC(2,2)
+    //     >;
+    // };
 };
 
 
