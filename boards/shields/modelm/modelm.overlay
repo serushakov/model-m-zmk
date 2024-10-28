@@ -3,15 +3,54 @@
 			zmk,kscan = &kscan1;
     };
 
-     kscan1: kscan {
-        compatible = "zmk,kscan-gpio-direct";
-        label = "kscan1";
-
-        input-gpios =
-            <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        ;
+		kscan1: kscan_matrix {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "row2col";
+        col-gpios
+            = <&ext1 6 GPIO_ACTIVE_LOW>
+            , <&ext1 5 GPIO_ACTIVE_LOW>
+            , <&ext1 4 GPIO_ACTIVE_LOW>
+            , <&ext1 3 GPIO_ACTIVE_LOW>
+            , <&ext1 2 GPIO_ACTIVE_LOW>
+            , <&ext1 1 GPIO_ACTIVE_LOW>
+            , <&ext1 0 GPIO_ACTIVE_LOW>
+            , <&ext2 5 GPIO_ACTIVE_LOW>
+            ;
+        row-gpios
+            = <&ext2 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext2 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext2 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext2 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&ext2 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            ;
     };
-	};
+};
+
+&feather_i2c {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    ext1: mcp23017@20 {
+        compatible = "microchip,mcp230xx";
+        status = "okay";
+        gpio-controller;
+        reg = <0x20>;
+        #gpio-cells = <2>;
+        ngpios = <16>;
+        int-gpios = <&xiao_d 2 GPIO_ACTIVE_LOW>;
+    };
+    ext2: mcp23017@21 {
+        compatible = "microchip,mcp230xx";
+        status = "okay";
+        gpio-controller;
+        reg = <0x21>;
+        #gpio-cells = <2>;
+        ngpios = <16>;
+        int-gpios = <&xiao_d 3 GPIO_ACTIVE_LOW>;
+    };
+};
