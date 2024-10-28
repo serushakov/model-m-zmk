@@ -2,6 +2,7 @@
 
 / {
     chosen {
+        zephyr,console = &cdc_acm_uart;
         zmk,kscan = &kscan1;
         // zmk,matrix-transform = &default_transform;
     };
@@ -28,7 +29,6 @@
         label = "kscan1";
 
         input-gpios =
-            <&ext0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&ext0 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&ext0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&ext0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -36,7 +36,8 @@
             <&ext0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&ext0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&ext0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            <&ext0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&ext0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
     // default_transform: matrix_transform {
@@ -55,6 +56,11 @@
 
 &i2c0 {
     status = "okay";
+    compatible = "nordic,nrf-twi";
+	status = "okay";
+	pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
     clock-frequency = <I2C_BITRATE_FAST>;
 
     ext0: mcp23017@20 {
@@ -65,4 +71,11 @@
         #gpio-cells = <2>;
         ngpios = <16>;
     };
+};
+
+&usbd {
+  status = "okay";
+  cdc_acm_uart: cdc_acm_uart {
+    compatible = "zephyr,cdc-acm-uart";
+  };
 };
