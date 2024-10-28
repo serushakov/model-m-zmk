@@ -29,15 +29,15 @@
         label = "kscan1";
 
         input-gpios =
-            <&ext0 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&ext0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            <&ext0 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&ext0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
     // default_transform: matrix_transform {
