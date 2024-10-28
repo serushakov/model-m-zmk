@@ -1,7 +1,7 @@
 / {
     chosen {
 			zmk,kscan = &kscan1;
-			zephyr,code-partition = &code_partition_actual;
+			zephyr,code-partition = &code_partition;
 			zephyr,flash = &flash0;
     };
 
@@ -17,6 +17,8 @@
         ;
     };
 	};
+
+/delete-node/ &flash0;
 
 &flash0 {
 	/*
@@ -40,16 +42,14 @@
 			read-only;
 			reg = <0x00000000 0x00026000>;
 		};
-		code_partition_actual: partition@26000 {
+		code_partition: partition@26000 {
 			label = "Application";
 			reg = <0x00026000 0x000C6000>;
 		};
-
 		storage_partition: partition@ec000 {
 			label = "Storage";
 			reg = <0x000ec000 0x00008000>;
 		};
-
 		boot_partition: partition@f4000 {
 			label = "UF2";
 			read-only;
