@@ -42,7 +42,7 @@
         reg = <0x20>;
         #gpio-cells = <2>;
         ngpios = <16>;
-        int-gpios = <&xiao_d 2 GPIO_ACTIVE_LOW>;
+        int-gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
     };
     ext2: mcp23017@21 {
         compatible = "microchip,mcp230xx";
@@ -51,6 +51,6 @@
         reg = <0x21>;
         #gpio-cells = <2>;
         ngpios = <16>;
-        int-gpios = <&xiao_d 3 GPIO_ACTIVE_LOW>;
+        int-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
     };
 };
