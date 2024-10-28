@@ -40,7 +40,7 @@
     //         <&ext0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     // };
 
-    kscan1: kscan {
+    kscan1: kscan_matrix {
         compatible = "zmk,kscan-matrix";
         label = "kscan1";
         diode-direction = "row2col";
