@@ -3,7 +3,7 @@
 			zmk,kscan = &kscan1;
     };
 
-		kscan1: kscan_matrix {
+    kscan1: kscan_matrix {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "row2col";
         col-gpios
