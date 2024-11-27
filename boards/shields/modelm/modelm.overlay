@@ -43,23 +43,23 @@
 		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "row2col";
 		col-gpios
-		= <&ext1 6 GPIO_ACTIVE_HIGH>
-		, <&ext1 5 GPIO_ACTIVE_HIGH>
-		, <&ext1 4 GPIO_ACTIVE_HIGH>
-		, <&ext1 3 GPIO_ACTIVE_HIGH>
-		, <&ext1 2 GPIO_ACTIVE_HIGH>
+		= <&ext1 0 GPIO_ACTIVE_HIGH>
 		, <&ext1 1 GPIO_ACTIVE_HIGH>
-		, <&ext1 0 GPIO_ACTIVE_HIGH>
-		, <&ext2 5 GPIO_ACTIVE_HIGH>
+		, <&ext1 2 GPIO_ACTIVE_HIGH>
+		, <&ext1 3 GPIO_ACTIVE_HIGH>
+		, <&ext1 4 GPIO_ACTIVE_HIGH>
+		, <&ext1 5 GPIO_ACTIVE_HIGH>
+		, <&ext1 6 GPIO_ACTIVE_HIGH>
+		, <&ext1 7 GPIO_ACTIVE_HIGH>
 		;
 		row-gpios
 		= <&ext2 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&ext1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&ext1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&ext2 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&ext2 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&ext2 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&ext1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&ext1 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&ext1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&ext2 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&ext2 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&ext2 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&ext2 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&ext2 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&ext2 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
