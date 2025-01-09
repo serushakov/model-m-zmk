@@ -1,6 +1,6 @@
 &xiao_i2c {
 	status = "okay";
-	clock-frequency = <I2C_BITRATE_SLOW>;
+	clock-frequency = <I2C_BITRATE_STANDARD>;
 
 	ext1: mcp23017@20 {
 		compatible = "microchip,mcp230xx";
