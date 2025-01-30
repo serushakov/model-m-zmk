@@ -20,4 +20,3 @@
 include:
     - board: adafruit_feather_nrf52840
       shield: modelm
-      snippet: zmk-usb-logging
