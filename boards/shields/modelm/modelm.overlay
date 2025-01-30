@@ -12,20 +12,20 @@
 		compatible = "zmk,battery-nrf-vddh";
 	};
 
-	/ {
-		leds {
-			compatible = "gpio-leds";
-			led_0 {
-				gpios = <&ext1 8 GPIO_ACTIVE_HIGH>;
-			};
-			led_1 {
-				gpios = <&ext1 9 GPIO_ACTIVE_HIGH>;
-			};
-			led_2 {
-				gpios = <&ext1 10 GPIO_ACTIVE_HIGH>;
-			};
+
+	leds {
+		compatible = "gpio-leds";
+		led_0 {
+			gpios = <&ext1 8 GPIO_ACTIVE_HIGH>;
+		};
+		led_1 {
+			gpios = <&ext1 9 GPIO_ACTIVE_HIGH>;
+		};
+		led_2 {
+			gpios = <&ext1 10 GPIO_ACTIVE_HIGH>;
 		};
 	};
+
 
 
 	// kscan1: kscan {
