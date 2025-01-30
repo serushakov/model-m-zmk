@@ -16,13 +16,13 @@
 	leds {
 		compatible = "gpio-leds";
 		led_0 {
-			gpios = <&ext1 8 GPIO_ACTIVE_HIGH>;
+			gpios = <&ext1 6 GPIO_ACTIVE_HIGH>;
 		};
 		led_1 {
-			gpios = <&ext1 9 GPIO_ACTIVE_HIGH>;
+			gpios = <&ext1 5 GPIO_ACTIVE_HIGH>;
 		};
 		led_2 {
-			gpios = <&ext1 10 GPIO_ACTIVE_HIGH>;
+			gpios = <&ext1 4 GPIO_ACTIVE_HIGH>;
 		};
 	};
 
@@ -63,7 +63,7 @@
 
 	kscan1: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
-		diode-direction = "row2col";
+		diode-direction = "col2row";
 
 		col-gpios =
 		<&ext0 15  (GPIO_ACTIVE_LOW)>,
