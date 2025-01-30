@@ -110,7 +110,7 @@
 		ngpios = <16>;
 	};
 
-	ext0: mcp23017@21 {
+	ext1: mcp23017@21 {
 		compatible = "microchip,mcp230xx";
 		status = "okay";
 		gpio-controller;
