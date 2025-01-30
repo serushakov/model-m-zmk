@@ -5,7 +5,28 @@
 		zephyr,console = &cdc_acm_uart;
 		zmk,kscan = &kscan1;
 		zmk,matrix-transform = &default_transform;
+		zmk,battery = &vbatt;
 	};
+
+	vbatt: vbatt {
+		compatible = "zmk,battery-nrf-vddh";
+	};
+
+	/ {
+		leds {
+			compatible = "gpio-leds";
+			led_0 {
+				gpios = <&ext1 8 GPIO_ACTIVE_HIGH>;
+			};
+			led_1 {
+				gpios = <&ext1 9 GPIO_ACTIVE_HIGH>;
+			};
+			led_2 {
+				gpios = <&ext1 10 GPIO_ACTIVE_HIGH>;
+			};
+		};
+	};
+
 
 	// kscan1: kscan {
 	//     compatible = "zmk,kscan-gpio-direct";
@@ -45,32 +66,32 @@
 		diode-direction = "row2col";
 
 		col-gpios =
-		<&ext0 15  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 14  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 13  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 12  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 11  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 10  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 9  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 3  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext0 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		<&ext0 15  (GPIO_ACTIVE_LOW)>,
+		<&ext0 14  (GPIO_ACTIVE_LOW)>,
+		<&ext0 13  (GPIO_ACTIVE_LOW)>,
+		<&ext0 12  (GPIO_ACTIVE_LOW)>,
+		<&ext0 11  (GPIO_ACTIVE_LOW)>,
+		<&ext0 10  (GPIO_ACTIVE_LOW)>,
+		<&ext0 9  (GPIO_ACTIVE_LOW)>,
+		<&ext0 8  (GPIO_ACTIVE_LOW)>,
+		<&ext0 7  (GPIO_ACTIVE_LOW)>,
+		<&ext0 6  (GPIO_ACTIVE_LOW)>,
+		<&ext0 5  (GPIO_ACTIVE_LOW)>,
+		<&ext0 4  (GPIO_ACTIVE_LOW)>,
+		<&ext0 3  (GPIO_ACTIVE_LOW)>,
+		<&ext0 2  (GPIO_ACTIVE_LOW)>,
+		<&ext0 1  (GPIO_ACTIVE_LOW)>,
+		<&ext0 0  (GPIO_ACTIVE_LOW)>;
 
 		row-gpios =
-		<&ext1 14 (GPIO_ACTIVE_LOW)>,
-		<&ext1 13 (GPIO_ACTIVE_LOW)>,
-		<&ext1 12 (GPIO_ACTIVE_LOW)>,
-		<&ext1 11 (GPIO_ACTIVE_LOW)>,
-		<&ext1 10 (GPIO_ACTIVE_LOW)>,
-		<&ext1 9 (GPIO_ACTIVE_LOW)>,
-		<&ext1 8 (GPIO_ACTIVE_LOW)>,
-		<&ext1 7 (GPIO_ACTIVE_LOW)>;
+		<&ext1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+		<&ext1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	};
 
 	default_transform: matrix_transform {
