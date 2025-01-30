@@ -66,32 +66,32 @@
 		diode-direction = "col2row";
 
 		col-gpios =
-		<&ext0 15  (GPIO_ACTIVE_LOW)>,
-		<&ext0 14  (GPIO_ACTIVE_LOW)>,
-		<&ext0 13  (GPIO_ACTIVE_LOW)>,
-		<&ext0 12  (GPIO_ACTIVE_LOW)>,
-		<&ext0 11  (GPIO_ACTIVE_LOW)>,
-		<&ext0 10  (GPIO_ACTIVE_LOW)>,
-		<&ext0 9  (GPIO_ACTIVE_LOW)>,
-		<&ext0 8  (GPIO_ACTIVE_LOW)>,
-		<&ext0 7  (GPIO_ACTIVE_LOW)>,
-		<&ext0 6  (GPIO_ACTIVE_LOW)>,
-		<&ext0 5  (GPIO_ACTIVE_LOW)>,
-		<&ext0 4  (GPIO_ACTIVE_LOW)>,
-		<&ext0 3  (GPIO_ACTIVE_LOW)>,
-		<&ext0 2  (GPIO_ACTIVE_LOW)>,
-		<&ext0 1  (GPIO_ACTIVE_LOW)>,
-		<&ext0 0  (GPIO_ACTIVE_LOW)>;
+		<&ext0 15  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 14  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 13  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 12  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 11  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 10  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 9  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 8  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 7  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 6  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 5  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 4  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 3  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 2  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 1  (GPIO_ACTIVE_HIGH)>,
+		<&ext0 0  (GPIO_ACTIVE_HIGH)>;
 
 		row-gpios =
-		<&ext1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&ext1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		<&ext1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&ext1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&ext1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&ext1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&ext1 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&ext1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&ext1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&ext1 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 	};
 
 	default_transform: matrix_transform {
